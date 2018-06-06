@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>简单的表格</title>
+<head th:replace="common/common_header"/>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+
+		<header th:replace="common/header :: header">Header</header>
+		<aside th:replace="common/left :: left">left</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>
+					测试程序 <small>preview of simple tables</small>
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Tables</a></li>
+					<li class="active">Simple</li>
+				</ol>
+			</section>
+		</div>
+		<!-- /.content-wrapper -->
+		
+		<footer th:replace="common/footer :: footer">footer</footer>
+		<aside th:replace="common/right :: right">right</aside>
+		<!-- Control Sidebar -->
+		<div class="control-sidebar-bg"></div>
+	</div>
+	<div th:replace="common/common_foot :: foot"></div>
+</body>
+</html>

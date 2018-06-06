@@ -1,5 +1,7 @@
 package com.iursp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,9 @@ public class UserService {
 	private UserMapper userMapper;
 
 	public void queryAllUsers(User user) {
-		
-		userMapper.queryAllUsers(user);
+		System.out.println("测试");
+		List<User> list = userMapper.queryAllUsers(user);
+		System.out.println(list.toString());
 	}
 	
 	

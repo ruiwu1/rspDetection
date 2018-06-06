@@ -1,12 +1,13 @@
 package com.iursp.mapper;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import com.iursp.domain.model.User;
 
-@Repository
+@Mapper
 public interface UserMapper {
 
-	void queryAllUsers(User user);
+	List<User> queryAllUsers(User user);
 
 }

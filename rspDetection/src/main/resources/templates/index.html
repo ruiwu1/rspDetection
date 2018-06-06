@@ -1,26 +1,286 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>learn Resources</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>中转监控平台</title>
+	<head th:replace="common/common_header"/>
 </head>
-<body>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<header class="main-header">
 
-	<div style="text-align: center; margin: 0 auto; width: 1000px;">
-		<h1>学习资源大奉送，爱我就关注嘟嘟公众号：嘟爷java超神学堂（javaLearn）</h1>
-		<table width="100%" border="1" cellspacing="1" cellpadding="0">
-			<tr>
-				<td>作者</td>
-				<td>教程名称</td>
-				<td>地址</td>
-			</tr>
-			<!--/*@thymesVar id="learnList" type=""*/-->
-			<tr th:each="learn : ${learnList}">
-				<td th:text="${learn.author}">嘟嘟MD</td>
-				<td th:text="${learn.title}">SPringBoot干货系列</td>
-				<td><a th:href="${learn.url}" target="_blank">点我</a></td>
-			</tr>
-		</table>
+			<a href="index2.html" class="logo"> 
+				<span class="logo-mini"><b>I</b>U</span> 
+				<span class="logo-lg"><b>IU_CER</b></span>
+			</a>
+			<!-- 右侧提示菜单 -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu"
+					role="button"> <span class="sr-only">Toggle navigation</span>
+				</a>
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- /.messages-menu -->
+						<li class="dropdown messages-menu">
+							<a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"> <i class="fa fa-envelope-o"></i> 
+								<span class="label label-success">4</span>
+							</a>
+							<ul class="dropdown-menu">
+								<li class="header">你有四条消息</li>
+								<li>
+									<ul class="menu">
+										<li>
+											<a href="#">
+												<div class="pull-left">
+													<!-- 头像 -->
+													<img th:src="@{~/img/headIcon/avatar04.png}" class="img-circle"
+														alt="User Image" />
+												</div> 
+												<h4>技术支持
+												<small>
+													<i class="fa fa-clock-o"></i> 
+													5 mins
+												</small>
+												</h4> <!-- The message -->
+												<p>请开始你的表演</p>
+										</a>
+										</li>
+										<!-- end message -->
+									</ul> <!-- /.menu -->
+								</li>
+								<li class="footer"><a href="#">查看所有消息</a></li>
+							</ul>
+						</li>
+						<!-- /.messages-menu -->
+
+						<!-- Notifications Menu -->
+						<li class="dropdown notifications-menu">
+							<!-- Menu toggle button --> <a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"> <i class="fa fa-bell-o"></i> <span
+								class="label label-warning">10</span>
+						</a>
+							<ul class="dropdown-menu">
+								<li class="header">你有十条注意事项</li>
+								<li>
+									<ul class="menu">
+										<li>
+											 <a href="#"> <i
+												class="fa fa-users text-aqua"></i> 5个新成员加入了你的团队
+												today
+										</a>
+										</li>
+										<!-- end notification -->
+									</ul>
+								</li>
+								<li class="footer"><a href="#">查看全部</a></li>
+							</ul>
+						</li>
+						<!-- Tasks Menu -->
+						<li class="dropdown tasks-menu">
+							<!-- Menu Toggle Button --> <a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"> <i class="fa fa-flag-o"></i> <span
+								class="label label-danger">9</span>
+						</a>
+							<ul class="dropdown-menu">
+								<li class="header">你有9条待办事项</li>
+								<li>
+									<ul class="menu">
+										<li>
+											<!-- Task item --> <a href="#"> <!-- Task title and progress text -->
+												<h3>
+													博客项目进度 <small class="pull-right">20%</small>
+												</h3> 
+												<div class="progress xs">
+													<div class="progress-bar progress-bar-aqua"
+														style="width: 20%" role="progressbar" aria-valuenow="20"
+														aria-valuemin="0" aria-valuemax="100">
+														<span class="sr-only">20% Complete</span>
+													</div>
+												</div>
+										</a>
+										</li>
+									</ul>
+								</li>
+								<li class="footer"><a href="#">查看所有待办事项</a></li>
+							</ul>
+						</li>
+						<li class="dropdown user user-menu">
+							<!-- Menu Toggle Button --> <a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"> <!-- The user image in the navbar-->
+								<img th:src="@{~/img/headIcon/avatar04.png}" class="user-image" alt="User Image" /> 
+								<span class="hidden-xs">RuiWu Pierce</span>
+						</a>
+						<!-- 点开头像详情 -->
+							<ul class="dropdown-menu">
+								<!-- The user image in the menu -->
+								<li class="user-header"><img th:src="@{~/img/headIcon/avatar04.png}" class="img-circle"
+									alt="User Image" />
+									<p>
+										RuiWu Pierce - JavaEE Developer <small>Member since
+											Nov. 2012</small>
+									</p></li>
+								<li class="user-body">
+									<div class="row">
+										<div class="col-xs-4 text-center">
+											<a href="#">关注</a>
+										</div>
+										<div class="col-xs-4 text-center">
+											<a href="#">黑名单</a>
+										</div>
+										<div class="col-xs-4 text-center">
+											<a href="#">朋友</a>
+										</div>
+									</div> <!-- /.row -->
+								</li>
+								<li class="user-footer">
+									<div class="pull-left">
+										<a href="#" class="btn btn-default btn-flat">个人空间</a>
+									</div>
+									<div class="pull-right">
+										<a href="#" class="btn btn-default btn-flat">登出</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#" data-toggle="control-sidebar"><i
+								class="fa fa-gears"></i></a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<aside class="main-sidebar">
+			<!-- 左侧头像 -->
+			<section class="sidebar">
+				<div class="user-panel">
+					<div class="pull-left image">
+						<img th:src="@{~/img/headIcon/avatar04.png}" class="img-circle"
+							alt="User Image" />
+					</div>
+					<div class="pull-left info">
+						<p>RuiWu Pierce</p>
+						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+					</div>
+				</div>
+
+				<form action="#" method="get" class="sidebar-form">
+					<div class="input-group">
+						<input type="text" name="q" class="form-control" placeholder="Search..." />
+						<span class="input-group-btn">
+							<button type="submit" name="search" id="search-btn"
+								class="btn btn-flat">
+								<i class="fa fa-search"></i>
+							</button>
+						</span>
+					</div>
+				</form>
+
+				<ul class="sidebar-menu" data-widget="tree">
+					<li class="header">HEADER</li>
+					<li class="active"><a href="#"><i class="fa fa-link"></i>
+							<span>个人中心</span></a></li>
+					<li><a href="javascript:void(0);" onclick="locationUrl('/Jump/explore/0','explore')"><i class="fa fa-link"></i> 
+							<span>数据库设置</span></a></li>
+					<li class="treeview">
+							<a href="#"><i class="fa fa-link"></i>
+							<span>用户管理</span> 
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span> </a>
+						<ul class="treeview-menu">
+							<li><a href="#">角色管理</a></li>
+							<li><a href="#">用户管理</a></li>
+							<li><a href="#">权限控制</a></li>
+						</ul></li>
+				</ul>
+			</section>
+		</aside>
+		<!-- 主页面 -->
+		<div class="content-wrapper">
+			<section class="content-header">
+				<h1>
+					Page Header <small>Optional description</small>
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+					<li class="active">Here</li>
+				</ol>
+			</section>
+
+			<section class="content container-fluid"></section>
+		</div>
+		
+		<!-- 页尾 -->
+		<footer class="main-footer">
+			<!-- To the right -->
+			<div class="pull-right hidden-xs">商标声明：Spring 是 Pivotal Software,Inc. 在美国以及其他国家的商标</div>
+			<strong>Copyright &copy; © 2016 - 2018 
+			</strong> 沪ICP备17049000号-1
+		</footer>
+
+		<!-- Control 右侧隐藏菜单 -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Create the tabs -->
+			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+				<li class="active"><a href="#control-sidebar-home-tab"
+					data-toggle="tab"><i class="fa fa-home"></i></a></li>
+				<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i
+						class="fa fa-gears"></i></a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<!-- Home tab content -->
+				<div class="tab-pane active" id="control-sidebar-home-tab">
+					<h3 class="control-sidebar-heading">近期活动</h3>
+					<ul class="control-sidebar-menu">
+						<li><a href="javascript:;"> <i
+								class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+								<div class="menu-info">
+									<h4 class="control-sidebar-subheading">mimi's Birthday</h4>
+
+									<p>2018-06-07</p>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /.control-sidebar-menu -->
+
+					<h3 class="control-sidebar-heading">任务进展</h3>
+					<ul class="control-sidebar-menu">
+						<li><a href="javascript:;">
+								<h4 class="control-sidebar-subheading">
+									省中医 <span class="pull-right-container">
+										<span class="label label-danger pull-right">70%</span>
+									</span>
+								</h4>
+
+								<div class="progress progress-xxs">
+									<div class="progress-bar progress-bar-danger"
+										style="width: 70%"></div>
+								</div>
+						</a></li>
+					</ul>
+
+				</div>
+				<div class="tab-pane" id="control-sidebar-stats-tab">通用设置</div>
+				<!-- /.tab-pane -->
+				<div class="tab-pane" id="control-sidebar-settings-tab">
+					<form method="post">
+						<h3 class="control-sidebar-heading">一般设置</h3>
+
+						<div class="form-group">
+							<label class="control-sidebar-subheading">报表统计菜单
+								<input type="checkbox" class="pull-right" />
+							</label>
+
+							<p>一些通用设置的说明</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</aside>
+		<div class="control-sidebar-bg"></div>
 	</div>
+	
+<div th:replace="common/common_foot :: foot"></div>
 </body>
 </html>
